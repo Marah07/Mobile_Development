@@ -1,0 +1,43 @@
+package com.example.myapplication2;
+
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    private Spinner spinner;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        spinner = (Spinner)findViewById(R.id.spinner);
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Addition");
+
+        list.add("Multiplication");
+
+        list.add("Soustraction");
+
+        list.add("Division");
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_spinner_dropdown_item,list);
+
+        spinner.setAdapter(adapter);
+
+
+
+
+    }
+
+
+
+}
+
